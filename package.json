@@ -1,0 +1,32 @@
+{
+    "name": "cube-editor",
+    "version": "1.0.0",
+    "description": "2D R cube editor",
+    "main": "app/index.html",
+    "dependencies": {
+    },
+    "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-nw-builder": "^1.3.0",
+        "nw-builder": "^2.0.2"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/akakwel/cube-editor.git"
+    },
+    "keywords": [
+        "Rubik",
+        "cube",
+        "node",
+        "webkit"
+    ],
+    "author": "Axel Ayigbede <axelakakwel@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/akakwel/cube-editor/issues"
+    },
+    "homepage": "https://github.com/akakwel/cube-editor#readme"
+}
