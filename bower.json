@@ -1,0 +1,28 @@
+{
+    "name": "cube-editor",
+    "version": "0.1.0",
+    "homepage": "https://github.com/akakwel/cube-editor",
+    "authors": [
+        "Axel Ayigbede <axelakakwel@gmail.com>"
+    ],
+    "description": "2D R cube editor",
+    "main": "app/index.html",
+    "keywords": [
+        "rubik",
+        "cube",
+        "node",
+        "webkit"
+    ],
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "app/lib",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "~2.1.4"
+    }
+}
