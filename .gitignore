@@ -2,3 +2,5 @@ node_modules
 app/lib
 build
 cache
+*.iml
+.idea
