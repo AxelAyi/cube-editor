@@ -1,8 +1,8 @@
 'use strict';
 
-(function () {
-    var DEFAULT_COLORS = ["#5B6C98", "#FFFFFF", "#FD8C3C", "#84d2a8", "#f6dc64", "#dd362a", "#646464"];
-
+var cubeHelper = (function () {
+    var DEFAULT_COLORS = ["#646464", "#5B6C98", "#FFFFFF", "#FD8C3C", "#84d2a8", "#f6dc64", "#dd362a"];
+    var helpers = {'onSave': wait};
     var element, // cube with edition mode (focus + interaction)
         elementCopy, // cube copy (lighter cube to be stored)
         selectedFace, // selected cube face
@@ -13,7 +13,7 @@
         path = require('path'),
         process = require('process');
 
-    var localDir = process.execPath.substr(0,process.execPath.lastIndexOf(path.sep));
+    var localDir = process.execPath.substr(0, process.execPath.lastIndexOf(path.sep));
     fs.readFile(localDir + path.sep + 'colors.json', 'utf8', function (err, data) {
         var colorList = DEFAULT_COLORS;
 
@@ -25,9 +25,11 @@
         colorList.forEach(function (color, index) {
             var colorId = index + 1;
             var cubeColor = document.getElementById("color" + colorId);
-            cubeColor.value = color;
-            cubeColor.onchange = updateColor;
-            colors.push(cubeColor);
+            if (cubeColor) {
+                cubeColor.value = color;
+                cubeColor.onchange = updateColor;
+                colors.push(cubeColor);
+            }
         });
 
         xhr.open('get', 'img/cube.svg', true);
@@ -46,6 +48,7 @@
         for (var i = 0; i < blocs.length; i++) {
             var bloc = blocs[i];
             bloc.id = "bloc_" + i;
+            bloc.setAttribute("fill", colors[0].value);
         }
 
         var svgCopy = element.cloneNode(true);
@@ -58,15 +61,9 @@
             bloc.id = 'copy_' + bloc.id;
             bloc.classList.add('bloc-copy');
 
-            var color = null;
-            colors.forEach(function (c) {
-                if (bloc.getAttribute("fill").toLowerCase() === c.value) {
-                    color = c;
-                }
-            });
+            bloc.setAttribute("fill", colors[0].value);
 
-
-            bloc.classList.add(color.id);
+            bloc.classList.add(colors[0].id);
 
         }
 
@@ -209,5 +206,7 @@
             cb($(this).val());
         });
     }
+
+    return helpers;
 
 })();
