@@ -6,7 +6,7 @@
         "icon": "img/app.png",
 		"height": 580,
 		"width": 530,
-    "toolbar": true,
+    "toolbar": false,
     "frame": false,
     "transparent": true
 	}
