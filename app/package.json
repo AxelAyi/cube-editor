@@ -1,0 +1,13 @@
+{
+	"name": "Cube Editor",
+	"version": "0.1.0",
+	"main": "index.html",
+	"window": {
+        "icon": "img/app.png",
+		"height": 580,
+		"width": 530,
+    "toolbar": true,
+    "frame": false,
+    "transparent": true
+	}
+}
