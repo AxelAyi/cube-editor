@@ -6,6 +6,6 @@ gulp.task('build', function () {
     return gulp.src(['./app/**/*'])
         .pipe(nwBuilder({
             version: 'v0.12.2',
-            platforms: ['win64']
+            platforms: ['win', 'osx', 'linux']
         }));
 });
