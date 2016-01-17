@@ -28,4 +28,4 @@ Then run the **gulp** tasks:
 gulp build
 ```
 
-![alt tag](https://github.com/akakwel/cube-editor/develop/cube-editor.gif)
+![alt tag](https://raw.githubusercontent.com/akakwel/cube-editor/develop/cube-editor.gif)
