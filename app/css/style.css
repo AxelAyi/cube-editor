@@ -1,0 +1,32 @@
+#drag {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-image: url('../img/move.png');
+    width: 50px;
+    height: 50px;
+    -webkit-app-region: drag;
+    cursor: crosshair;
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+}
+
+.color {
+    float: left;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#save {
+    float: left;
+}
+
+a {
+    font-family: "Verdana";
+    padding: 5px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #c0c0c0;
+}
