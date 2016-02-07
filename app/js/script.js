@@ -2,12 +2,13 @@
 
 var cubeHelper = (function () {
     var DEFAULT_COLORS = ["#646464", "#5B6C98", "#FFFFFF", "#FD8C3C", "#84d2a8", "#f6dc64", "#dd362a"];
-    var helpers = {'onSave': wait};
+    var helpers = {'onSave': saveFile};
     var element, // cube with edition mode (focus + interaction)
         elementCopy, // cube copy (lighter cube to be stored)
         selectedFace, // selected cube face
         colorJson, // config file
-        colors = [], // cube possible colors (color DOM element)
+        colors = [],// cube possible colors (color DOM element),
+        fileChooser,
         xhr = new XMLHttpRequest,
         fs = require('fs'),
         path = require('path'),
@@ -68,6 +69,23 @@ var cubeHelper = (function () {
         }
 
         element.style.display = "none";
+
+        fileChooser = document.querySelector("#dialog input");
+        fileChooser.addEventListener("change", function(evt) {
+            element.style.display = "";
+            var data = document.getHTML(element, true);
+            element.style.display = "none";
+            var fileName = this.value;
+            var fs = require('fs');// save it now
+            fs.writeFile(this.value, data, function(err) {
+                if(err) {
+                    alert("error"+err);
+                }
+                else {
+                    alert("Cube saved as '" + fileName + "'");
+                }
+            });
+        }, false);
     }
 
     function updateColor() {
@@ -175,36 +193,8 @@ var cubeHelper = (function () {
         return txt;
     }
 
-    var buildFile = function (name, value) {
-        var img = new Buffer(value);
-        fs.writeFile(name, img, function (err) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log("The file was saved!");
-            }
-        });
-    }
-
-    function wait() {
-        $('#close-popup').click();
-        setTimeout(function () {
-            screen_shot()
-        }, 10);
-    }
-
-    function screen_shot() {
-        query_for_save_path(function (save_path) {
-            buildFile(save_path, document.getHTML(element, true));
-            alert('Cube saved to: ' + save_path);
-        });
-    }
-
-    function query_for_save_path(cb) {
-        $('#dialog').show();
-        $('#dialog input').one('change', function (event) {
-            cb($(this).val());
-        });
+    function saveFile() {
+        fileChooser.click();
     }
 
     return helpers;
