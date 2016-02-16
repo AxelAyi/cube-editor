@@ -17,8 +17,8 @@ npm update
 ```
 
 ```bash
-# Install gulp
-npm install gulp -g
+# Install gulp and bower
+npm install -g gulp bower
 ```
 
 Then run the **gulp** tasks:
