@@ -9,3 +9,5 @@ gulp.task('build', function () {
             platforms: ['win', 'osx', 'linux']
         }));
 });
+
+gulp.task('default', ['build']);
