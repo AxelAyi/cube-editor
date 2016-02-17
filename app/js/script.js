@@ -3,8 +3,8 @@
 var cubeHelper = (function () {
     var DEFAULT_COLORS = ["#646464", "#5B6C98", "#FFFFFF", "#FD8C3C", "#84d2a8", "#f6dc64", "#dd362a"];
     var helpers = {'onSave': saveFile};
-    var element, // cube with edition mode (focus + interaction)
-        elementCopy, // cube copy (lighter cube to be stored)
+    var element, // SVG cube with edition mode (focus + interaction)
+        elementCopy, // SVG cube copy (lighter cube to be stored)
         selectedFace, // selected cube face
         colorJson, // config file
         colors = [],// cube possible colors (color DOM element),
@@ -177,7 +177,6 @@ var cubeHelper = (function () {
             color.style.border = "3px solid black";
 
         }
-        //Do the stuff
     });
 
     document.getHTML = function (who, deep) {
