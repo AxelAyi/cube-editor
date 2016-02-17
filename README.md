@@ -1,7 +1,8 @@
 # cube-editor 
 
 This project is a simple 2D R desktop cube editor powered by Node Webkit.
-Its primary purpose is to help making tutorials about cube combinations.
+Its primary purpose was to help a writter making a book about cube solving tutorials.
+
 You may use it to color a SVG cube before saving it as a new SVG file.
 
 ## <a name="building"></a> Building
