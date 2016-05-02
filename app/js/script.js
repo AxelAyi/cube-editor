@@ -158,7 +158,7 @@ var cubeHelper = (function () {
         }
     }
 
-    $(document).on('click', 'path', function () {
+    $(document).on('click', 'polygon', function () {
         if (this.id.indexOf('copy_bloc_') !== -1) {
             if (selectedFace) {
                 selectedFace.setAttribute("stroke-width", "0");
